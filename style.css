@@ -1308,11 +1308,20 @@ body {font-family: Verdana, sans-serif;}
 
 .score {
   width: 100%;
+  text-align: center;
 }
 
 .score td {
-  border: 1px solid white;
+  border: 1px solid gray;
   padding: 5px;
+}
+
+.score .time_begin {
+  border-left: 0;
+}
+
+.score .score_finish {
+  border-right: 0;
 }
 
 .time_begin {
@@ -1325,8 +1334,12 @@ body {font-family: Verdana, sans-serif;}
   height: 20px;
 }
 
+.country {
+  text-align: left;
+}
+
 .score_0, .score_1, .score_2, .score_finish {
-  text-align: center;
+  
 }
 
 .score_finish {

@@ -2,6 +2,13 @@
 <html lang="en">
 
 <head>
+
+    
+  
+    
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-firestore.js"></script>
+
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -169,12 +176,12 @@
                                     <a href="tin1.html" id="img-main-news"><img src="img/bg-img/tin1.jpeg" alt=""></a>
                                 </div>
                                 <div class="post-data">
-                                    <a href="#" class="post-catagory" id="header-main-news">Fed Cup</a>
-                                    <a href="tin1.html" class="post-title" id="title-main-news">
-                                        <h6>Fed Cup semifinal: Australia, Belarus level after first day</h6>
+                                    <a href="#" class="post-catagory" id="header-main-news"></a>
+                                    <a href="tin1.html" class="post-title" >
+                                        <h6 id="title-main-news"></h6>
                                     </a>
                                     <div class="post-meta">
-                                        <p class="post-excerp" id="content-main-news">Australian Ashleigh Barty beat Victoria Azarenka of Belarus 7-6 (2), 6-3 to level their Fed Cup semifinal at 1-1 after the opening day of singles on hard courts at Pat Rafter Arena </p>
+                                        <p class="post-excerp" id="content-main-news"></p>
                                         <!-- Post Like & Post Comment -->
                                         <div class="d-flex align-items-center">
                                             <a href="#" class="post-like"><img src="img/core-img/like.png" alt=""> <span>392</span></a>
@@ -194,12 +201,12 @@
                             <a href="#" id="img-right-news-00"><img src="img/bg-img/tin4.jpg" alt=""></a>
                         </div>
                         <div class="post-data">
-                            <a href="#" class="post-catagory" id="header-right-news-00">Monte Carlo Masters</a>
+                            <a href="#" class="post-catagory" id="header-right-news-00"></a>
                             <div class="post-meta">
-                                <a href="#" class="post-title" id="title-right-news-00">
-                                    <h6>Rafael Nadal, Novak Djokovic reach quarterfinals at Monte Carlo Masters</h6>
+                                <a href="#" class="post-title" >
+                                    <h6 id="title-right-news-00"></h6>
                                 </a>
-                                <p class="post-date"><span>10:42 PM</span> | <span>April 21</span></p>
+                                <p class="post-date" ><span id ="time-00"></span> | <span id ="day-00"></span></p>
                             </div>
                         </div>
                     </div>
@@ -519,7 +526,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         </div>
     </footer>
     <!-- ##### Footer Area Start ##### -->
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+    
     <!-- ##### All Javascript Files ##### -->
     <!-- jQuery-2.2.4 js -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
@@ -531,6 +539,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="js/plugins/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
+    <script src="js/news.js"></script>
 </body>
 
 </html>

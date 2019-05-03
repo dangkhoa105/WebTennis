@@ -12,7 +12,6 @@ firebase.initializeApp(config);
 
 var db = firebase.firestore();
 
-retrievingDataRanking();
 
 function storeDataRanking() {
 
@@ -40,12 +39,34 @@ function storeDataRanking() {
   });
 }
 
-function retrievingDataRanking(){
- var docRef = db.collection("Ranking").orderBy("currentRank", "asc")
+function rRankingATP(){
+
+    var docRef = db.collection("Ranking-ATP").orderBy("currentRank", "asc")
+    docRef.get().then(function (querySnapshot) {
+    querySnapshot.forEach(function(data){
+        
+        document.querySelector("#rankings-atp").innerHTML += `
+        ${data.data().playerName} 
+        ${data.data().playerPoints} 
+        ${data.data().playerCountry}  
+        ${data.data().prevRank} 
+        ${data.data().currentRank} 
+        </br>
+        ` 
+    });
+    });
+
+
+}
+
+
+function rRankingWTA(){
+
+  var docRef = db.collection("Ranking-WTA").orderBy("currentRank", "asc")
   docRef.get().then(function (querySnapshot) {
   querySnapshot.forEach(function(data){
       
-      document.querySelector("#text").innerHTML += `
+      document.querySelector("#rankings-wta").innerHTML += `
       ${data.data().playerName} 
       ${data.data().playerPoints} 
       ${data.data().playerCountry}  
@@ -55,6 +76,6 @@ function retrievingDataRanking(){
       ` 
   });
   });
-}
 
-  
+
+}

@@ -43,6 +43,12 @@ document.getElementById("addDelete").onclick  = function(){Delete()};
 function Delete(){
   $('button[id^="delete"]').show();
 }
+function updateKey()
+{
+    var key=$("#title").val();
+    key=key.replace(" ","_");
+    $("#url_key").val(key);
+}
 function retrievingData() {
  
   const list_div = document.querySelector("#list-score");
@@ -50,14 +56,18 @@ function retrievingData() {
   var docRef = db.collection("Schedule").where("Date", "==","2018-12-31")
   docRef.get().then(function (querySnapshot) {
     querySnapshot.forEach(function(data){
+      let imgW = data.data().Winner;
+      let imgL = data.data().Loser;
+      imgW = imgW.replace(" ","%20");
+      imgL = imgL.replace(" ","%20");
       list_div.innerHTML += 
       `
       
       <table width  = 500 style = 'background-color: #008B8B'; >
       <tr>
         <td width = "15%" ${set_size}>${data.data().Location}</br>
-        <img  width = 20 heigh = 30 src = 'img/flag/${data.data().Winner}.png';/></br>
-        <img  width = 20 heigh = 30 src = 'img/flag/${data.data().Loser}.png';/></td>
+        <img  width = 20 heigh = 30 src = 'https://raw.githubusercontent.com/NguyenTanPhucK11/dataOfTennis/master/flags/${imgW}.png';/></br>
+        <img  width = 20 heigh = 30 src = 'https://raw.githubusercontent.com/NguyenTanPhucK11/dataOfTennis/master/flags/${imgL}.png';/></td>
 
         <td width = "30%" ${set_size} width = "30%"> Player</br>
         ${data.data().Winner}</br> 

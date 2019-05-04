@@ -43,6 +43,12 @@ document.getElementById("addDelete").onclick  = function(){Delete()};
 function Delete(){
   $('button[id^="delete"]').show();
 }
+function updateKey()
+{
+    var key=$("#title").val();
+    key=key.replace(" ","_");
+    $("#url_key").val(key);
+}
 function retrievingData() {
  
   const list_div = document.querySelector("#list-score");
@@ -50,7 +56,12 @@ function retrievingData() {
   var docRef = db.collection("Schedule").where("Date", "==","2018-12-31")
   docRef.get().then(function (querySnapshot) {
     querySnapshot.forEach(function(data){
+      let imgW = data.data().Winner;
+      let imgL = data.data().Loser;
+      imgW = imgW.replace(" ","%20");
+      imgL = imgL.replace(" ","%20");
       list_div.innerHTML += 
+<<<<<<< HEAD
    `
       <style>
         .container_score {
@@ -84,6 +95,32 @@ function retrievingData() {
           width: 30px;
           height: 20px;
         }
+=======
+      `
+      
+      <table width  = 500 style = 'background-color: #008B8B'; >
+      <tr>
+        <td width = "15%" ${set_size}>${data.data().Location}</br>
+        <img  width = 20 heigh = 30 src = 'https://raw.githubusercontent.com/NguyenTanPhucK11/dataOfTennis/master/flags/${imgW}.png';/></br>
+        <img  width = 20 heigh = 30 src = 'https://raw.githubusercontent.com/NguyenTanPhucK11/dataOfTennis/master/flags/${imgL}.png';/></td>
+
+        <td width = "30%" ${set_size} width = "30%"> Player</br>
+        ${data.data().Winner}</br> 
+        ${data.data().Loser}</td>
+
+        <td width = "15%" ${set_size}> W1</br>
+        ${data.data().W1}</br>
+        ${data.data().L1}</td>
+
+        <td width = "15%" ${set_size}> W2</br>
+        ${data.data().W2}</br>
+        ${data.data().L2}</td>
+
+        <td width = "15%" ${set_size}> 
+        ${data.data().W3 != "undefined" ? 'W3</br>' + data.data().W3 + '</br>'+ data.data().L3 : ""}</td>
+        <td width = "5%" ${set_size}style = 'background-ground: #FFFFFF'; ><button id = "delete${data.data().ID}" onclick = "deleteData(${data.data().ID})" style="display: none;">Delete</button></td>
+        </br>
+>>>>>>> 9e0c102f1b1b829aab758de4f9fa0fc93bad1e12
         
         .country {
           text-align: left;

@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-firestore.js"></script>
 
+<head>
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,6 +19,15 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
 </head>
 
 <body>
@@ -88,23 +95,19 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                  <li><a href="index.html"><i class="fa fa-fw fa-home"></i> HOME</a></li>
-                                  <li class="active"><a href="score.html"><i class="fas fa-splotch"></i> SCORES</a></li>
-<<<<<<< HEAD
-                                  <li><a href="tin1.html"><i class="fas fa-newspaper"></i> NEWS</a></li>
-                                  <li class="nav-item dropdown">
-                                    <a data-toggle="dropdown" href="#">RANKINGS</a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">RANK ATP</a>
-                                        <a class="dropdown-item" href="#">RANK WTA</a>
-                                    </div>
-                                  </li>
-=======
-                                  <li><a href="news.html"><i class="fas fa-newspaper"></i> NEWS</a></li>
-                                  <li><a href="#">VIDEOS</a></li>
->>>>>>> 9e0c102f1b1b829aab758de4f9fa0fc93bad1e12
-                                  <li><a href="#">PLAYERS</a></li>                         
-                                  <li><a href="contact.html"><i class="fas fa-phone"></i> CONTACT</a></li>
+                                    <li class="active"><a href="index.html"><i class="fa fa-fw fa-home"></i> HOME</a></li>
+                                    <li><a href="score.html"><i class="fas fa-splotch"></i> SCORES</a></li>
+                                    <li><a href="tin1.html"><i class="fas fa-newspaper"></i> NEWS</a></li>
+                                    <!-- dropdown -->
+                                    <li class="nav-item dropdown">
+                                        <a  data-toggle="dropdown" href="#">RANKINGS</a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="rankatp.html">RANK ATP</a>
+                                            <a class="dropdown-item" href="#">RANK WTA</a>
+                                        </div>
+                                     </li>
+                                    <li><a href="#">PLAYERS</a></li>                         
+                                    <li><a href="contact.html"><i class="fas fa-phone"></i> CONTACT</a></li>
                                 </ul>
                             </div>
                             <!-- Nav End -->
@@ -114,54 +117,24 @@
             </div>
         </div>
     </header>
-    <div>
-    <div class= "main-list" >
-        <button class="droptxt" id = "get_btn" onclick = "retrievingData()">Get</button>
-        <!-- <input type="text" placeholder="Enter MM/DD/YY " id = "date_time" > -->
-        <input id = "datetime">
+
+    <div class="table" align="center">
+        <table id="rank">
+            <thead>
+            <tr>
+                <th>Player</th>
+                <th>Country</th>
+                <th>Prev-Rank</th>
+                <th>Rank</th>
+                <th>Ranking <br>Points</th>
+            </tr>
+            <tr>
+                <td id="name">novak djokovic</td>
+                <td>serbia</td>
+                <td>1</td>
+                <td>1</td>
+                <td>11,070</td>
+            </tr>
+            </thead>
+        </table>
     </div>
-    <div class ="main-list" id = "list_div">
-        <div class = "list-item">
-            <h3></h3>
-        </div>
-    </div>
-    <div class= "main-list">
-        <button class="droptxt" id = "addDelete" >addDelete</button> 
-        <button class="droptxt" id = "hide" >Hide</button> 
-        <input type = "text" class="droptxt" id = "countData" >
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
-        <script src="./js/score-data.js"></script>
-         
-        <!-- Datetime -->
-        <link rel="stylesheet" href="./css/jquery.datetimepicker.min.css">
-        <script src = "./js/jquery.js"></script>
-        <script src = "./js/jquery.datetimepicker.full.js"></script>
-        <script>$("#datetime").datetimepicker();</script>   
-    </div>
-    <div class="container_score_1"> 
-        <ul class="header_score">
-            <li class="title_score">IN PROCESS</li>
-            <li class="time_score">TIME</li>
-        </ul>
-    </div>  
-    <div class= "tab" id = "list-score">
-        <!-- <button class="tablinks" onclick = "retrievingData()">Men</button>
-        <button class="tablinks" onclick = "retrievingData()">Women</button> -->
-    </div>
-  <!-- ##### Footer Area Start ##### -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
-    
-  <!-- ##### All Javascript Files ##### -->
-  <!-- jQuery-2.2.4 js -->
-  <script src="js/jquery/jquery-2.2.4.min.js"></script>
-  <!-- Popper js -->
-  <script src="js/bootstrap/popper.min.js"></script>
-  <!-- Bootstrap js -->
-  <script src="js/bootstrap/bootstrap.min.js"></script>
-  <!-- All Plugins js -->
-  <script src="js/plugins/plugins.js"></script>
-  <!-- Active js -->
-  <script src="js/active.js"></script>
-  <script src="js/news.js"></script>
-</body>
-</html>

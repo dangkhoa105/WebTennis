@@ -38,8 +38,7 @@
   /* Style the tab */
   .tab {
     overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
+    /* background-image: linear-gradient(#e72f2f, #ffffff); */
   }
   
   /* Style the buttons inside the tab */
@@ -1308,24 +1307,41 @@ body {font-family: Verdana, sans-serif;}
 /*ket thuc them lich*/
 
 /*Score*/
-.container_score {
-  width: 25%;
+.container_score_1 {
+  width: 75%;
+  text-align: center;
+  padding-left: 25%;       
+}
+
+.container_score{
+  width: 75%;
+  text-align: center;
+  padding-left: 25%;      
 }
 
 /*header*/
 .header_score {
-  padding: 5px;
-  background: rgb(33,180,61);
+  text-align: left;
+  overflow: auto;
+  border-bottom: 5px solid #ee002d;;      
+  padding: 0; 
 }
 
 .header_score li {
-  display: inline;
   color: white;
   font-size: 13px;
+  display: inline;
+  background: #ee002d;;    
+}
+
+.title_score {
+  float: left;      
+  padding:2px;  
 }
 
 .time_score {
-  float: right;
+  float: right;      
+  padding:2px;  
 }
 
 /*content*/
@@ -1363,21 +1379,6 @@ body {font-family: Verdana, sans-serif;}
 
 .country {
   text-align: left;
-}
-
-.score_0, .score_1, .score_2, .score_finish {
-  
-}
-
-.score_finish {
-  background: rgb(206,206,206);
-}
-
-.footer_score {
-  padding: 3px 10px;
-  text-align: right;
-  background: rgb(234,232,232);
-  font-weight: bold;
 }
 
 /*Ket thuc Score*/

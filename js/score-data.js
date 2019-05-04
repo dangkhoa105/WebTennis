@@ -51,35 +51,70 @@ function retrievingData() {
   docRef.get().then(function (querySnapshot) {
     querySnapshot.forEach(function(data){
       list_div.innerHTML += 
-      `
-      
-      <table width  = 500 style = 'background-color: #008B8B'; >
-      <tr>
-        <td width = "15%" ${set_size}>${data.data().Location}</br>
-        <img  width = 20 heigh = 30 src = 'img/flag/${data.data().Winner}.png';/></br>
-        <img  width = 20 heigh = 30 src = 'img/flag/${data.data().Loser}.png';/></td>
+   `
+      <style>
+        .container_score {
+          width: 75%;
+          text-align: center;
+          padding-left: 25%;         
+        }
 
-        <td width = "30%" ${set_size} width = "30%"> Player</br>
-        ${data.data().Winner}</br> 
-        ${data.data().Loser}</td>
-
-        <td width = "15%" ${set_size}> W1</br>
-        ${data.data().W1}</br>
-        ${data.data().L1}</td>
-
-        <td width = "15%" ${set_size}> W2</br>
-        ${data.data().W2}</br>
-        ${data.data().L2}</td>
-
-        <td width = "15%" ${set_size}> 
-        ${data.data().W3 != "undefined" ? 'W3</br>' + data.data().W3 + '</br>'+ data.data().L3 : ""}</td>
-        <td width = "5%" ${set_size}style = 'background-ground: #FFFFFF'; ><button id = "delete${data.data().ID}" onclick = "deleteData(${data.data().ID})" style="display: none;">Delete</button></td>
-        </br>
+        .wrap_score {
+          background: white;
+        }
         
-        </tr>
-        </table>
-        `
-       
+        .score {
+          width: 100%;
+          text-align: center;
+        }
+        
+        .score td {
+          border: 1px solid gray;
+        }
+        
+        .score .time_begin {
+          border-left: 0;
+        }
+        
+        .score .score_finish {
+          border-right: 0;
+        }
+        
+        .flag img {
+          width: 30px;
+          height: 20px;
+        }
+        
+        .country {
+          text-align: left;
+        }      
+      </style>
+
+      <div class="container_score">     
+        <div class="wrap_score">
+          <table class="score">
+            <tr style="background:#02031c; color: white;">
+              <td style="background:#02031c; text-align: left; color: white; padding-left:40px;" colspan="5" ${set_size}><i class="fas fa-map-marker-alt"></i> Stadium: ${data.data().Location}</td>
+              <td style="background:white;" rowspan="3" ><button id = "delete${data.data().ID}" onclick = "deleteData(${data.data().ID})" style="display: none;">- </button></td>
+            </tr>
+            <tr>
+              <td width = "15%" class="flag"><img src="img/flag/${data.data().Winner}.png"></td>
+              <td width = "35%" class="country"><i class="fas fa-racquet"></i> ${data.data().Winner}</td>
+              <td width = "17%">${data.data().W1}</td>
+              <td width = "17%">${data.data().W2}</td>
+              <td width = "17%">${data.data().W3 != "undefined" ? + data.data().W3 : ""}</td>
+              
+            </tr>
+            <tr>
+              <td width = "15%" class="flag"><img src="img/flag/${data.data().Loser}.png"></td>
+              <td width = "30%" class="country"><i class="fas fa-racquet"></i> ${data.data().Loser}</td>
+              <td width = "17%">${data.data().L1}</td>
+              <td width = "17%">${data.data().L2}</td>
+              <td width = "17%">${data.data().W3 != "undefined" ? + data.data().L3 : ""}</td>
+            </tr>
+          </table>             
+          </div>
+        </div>`   
     })
     
   });

@@ -9,9 +9,9 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 <!-- them bootstrap -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
 <!-- ket thuc them bootstrap -->
 <!-- them twitter -->
 <script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script>
@@ -97,7 +97,13 @@
                                     <li><a href="index.html"><i class="fa fa-fw fa-home"></i> HOME</a></li>
                                     <li><a href="score.html"><i class="fas fa-splotch"></i> SCORES</a></li>
                                     <li class="active"><a href="tin1.html"><i class="fas fa-newspaper"></i> NEWS</a></li>
-                                    <li><a href="#">VIDEOS</a></li>
+                                    <li class="nav-item dropdown">
+                                        <a data-toggle="dropdown" href="#">RANKINGS</a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">RANK ATP</a>
+                                            <a class="dropdown-item" href="#">RANK WTA</a>
+                                        </div>
+                                    </li>
                                     <li><a href="#">PLAYERS</a></li>                         
                                     <li><a href="contact.html"><i class="fas fa-phone"></i> CONTACT</a></li>
                                 </ul>
@@ -284,4 +290,18 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             </div>
         </div>
     </footer>
+<!-- ##### All Javascript Files ##### -->
+  <!-- jQuery-2.2.4 js -->
+  <script src="js/jquery/jquery-2.2.4.min.js"></script>
+  <!-- Popper js -->
+  <script src="js/bootstrap/popper.min.js"></script>
+  <!-- Bootstrap js -->
+  <script src="js/bootstrap/bootstrap.min.js"></script>
+  <!-- All Plugins js -->
+  <script src="js/plugins/plugins.js"></script>
+  <!-- Active js -->
+  <script src="js/active.js"></script>
+  <script src="js/news.js"></script>
+</body>
+</html>
 

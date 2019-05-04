@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-firestore.js"></script>
 <head>
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-firestore.js"></script>
+
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -90,7 +91,13 @@
                                   <li><a href="index.html"><i class="fa fa-fw fa-home"></i> HOME</a></li>
                                   <li class="active"><a href="score.html"><i class="fas fa-splotch"></i> SCORES</a></li>
                                   <li><a href="tin1.html"><i class="fas fa-newspaper"></i> NEWS</a></li>
-                                  <li><a href="#">VIDEOS</a></li>
+                                  <li class="nav-item dropdown">
+                                    <a data-toggle="dropdown" href="#">RANKINGS</a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">RANK ATP</a>
+                                        <a class="dropdown-item" href="#">RANK WTA</a>
+                                    </div>
+                                  </li>
                                   <li><a href="#">PLAYERS</a></li>                         
                                   <li><a href="contact.html"><i class="fas fa-phone"></i> CONTACT</a></li>
                                 </ul>
@@ -102,35 +109,54 @@
             </div>
         </div>
     </header>
-
-<div class= "tab" id = "list-score">
-  <!-- <button class="tablinks" onclick = "retrievingData()">Men</button>
-  <button class="tablinks" onclick = "retrievingData()">Women</button> -->
-</div>
-<div class= "main-list" id = "list-score">
-        <h3>Search</h3>
-        <!-- <button id = "submit_btn" onclick = "storeData()">Proceed</button> -->
-        
-        <button id = "get_btn" onclick = "retrievingData()">Get</button>
+    <div>
+    <div class= "main-list" >
+        <button class="droptxt" id = "get_btn" onclick = "retrievingData()">Get</button>
         <!-- <input type="text" placeholder="Enter MM/DD/YY " id = "date_time" > -->
         <input id = "datetime">
-      </div>
-      <div class ="main-list" id = "list_div">
-          <div class = "list-item">
-              <h3></h3>
-              <p>--**--</p>
-          </div>
-      </div>
-      <button class="droptxt" id = "addDelete" >addDelete</button> 
-      <button class="droptxt" id = "hide" >Hide</button> 
-      <input type = "text" class="droptxt" id = "countData" >
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
-      <script src="./js/score-data.js"></script>
-
-      
-    <!-- Datetime -->
-    <link rel="stylesheet" href="./css/jquery.datetimepicker.min.css">
-    <script src = "./js/jquery.js"></script>
-    <script src = "./js/jquery.datetimepicker.full.js"></script>
-    <script>$("#datetime").datetimepicker();</script>   
-</div>
+    </div>
+    <div class ="main-list" id = "list_div">
+        <div class = "list-item">
+            <h3></h3>
+        </div>
+    </div>
+    <div class= "main-list">
+        <button class="droptxt" id = "addDelete" >addDelete</button> 
+        <button class="droptxt" id = "hide" >Hide</button> 
+        <input type = "text" class="droptxt" id = "countData" >
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+        <script src="./js/score-data.js"></script>
+         
+        <!-- Datetime -->
+        <link rel="stylesheet" href="./css/jquery.datetimepicker.min.css">
+        <script src = "./js/jquery.js"></script>
+        <script src = "./js/jquery.datetimepicker.full.js"></script>
+        <script>$("#datetime").datetimepicker();</script>   
+    </div>
+    <div class="container_score_1"> 
+        <ul class="header_score">
+            <li class="title_score">IN PROCESS</li>
+            <li class="time_score">TIME</li>
+        </ul>
+    </div>  
+    <div class= "tab" id = "list-score">
+        <!-- <button class="tablinks" onclick = "retrievingData()">Men</button>
+        <button class="tablinks" onclick = "retrievingData()">Women</button> -->
+    </div>
+  <!-- ##### Footer Area Start ##### -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+    
+  <!-- ##### All Javascript Files ##### -->
+  <!-- jQuery-2.2.4 js -->
+  <script src="js/jquery/jquery-2.2.4.min.js"></script>
+  <!-- Popper js -->
+  <script src="js/bootstrap/popper.min.js"></script>
+  <!-- Bootstrap js -->
+  <script src="js/bootstrap/bootstrap.min.js"></script>
+  <!-- All Plugins js -->
+  <script src="js/plugins/plugins.js"></script>
+  <!-- Active js -->
+  <script src="js/active.js"></script>
+  <script src="js/news.js"></script>
+</body>
+</html>

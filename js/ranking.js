@@ -45,14 +45,67 @@ function rRankingATP(){
     docRef.get().then(function (querySnapshot) {
     querySnapshot.forEach(function(data){
         
-        document.querySelector("#rankings-atp").innerHTML += `
-        ${data.data().playerName} 
-        ${data.data().playerPoints} 
-        ${data.data().playerCountry}  
-        ${data.data().prevRank} 
-        ${data.data().currentRank} 
+        document.querySelector("#name").innerHTML += `  
+        <div align=center>
+<table>
+        <tr>
+        <td width=30%>
+        ${data.data().playerName}
+        </td>        
+        </tr>
+        </table>
+        </div>
         </br>
         ` 
+        document.querySelector("#country").innerHTML += `
+        <div align=center>
+<table>
+        <tr width=30%>
+        <td>
+        ${data.data().playerCountry}
+        </td>        
+        </tr>
+        </table>
+        </div>
+        </br>
+        ` 
+        document.querySelector("#pre-rank").innerHTML += `
+        <div align=center>
+<table>
+        <tr>
+        <td width=15%>
+        ${data.data().prevRank}
+        </td>        
+        </tr>
+        </table>
+        </div>
+        </br>
+        ` 
+        document.querySelector("#rank").innerHTML += `
+        <div align=center>
+<table>
+        <tr>
+        <td width=15%>
+        ${data.data().currentRank}
+        </td>        
+        </tr>
+        </table>
+        </div>
+        </br>
+        ` 
+        document.querySelector("#point").innerHTML += `
+        <div align=center>
+<table>
+        <tr>
+        <td width=20%>
+        ${data.data().playerPoints}
+        </td>        
+        </tr>
+        </table>
+        </div>
+        </br>
+        ` 
+
     });
     });
 
@@ -66,14 +119,66 @@ function rRankingWTA(){
   docRef.get().then(function (querySnapshot) {
   querySnapshot.forEach(function(data){
       
-      document.querySelector("#rankings-wta").innerHTML += `
-      ${data.data().playerName} 
-      ${data.data().playerPoints} 
-      ${data.data().playerCountry}  
-      ${data.data().prevRank} 
-      ${data.data().currentRank} 
-      </br>
-      ` 
+     document.querySelector("#name").innerHTML += `  
+        <div align=center>
+<table>
+        <tr>
+        <td width=30%>
+        ${data.data().playerName}
+        </td>        
+        </tr>
+        </table>
+        </div>
+        </br>
+        ` 
+        document.querySelector("#country").innerHTML += `
+        <div align=center>
+<table>
+        <tr width=30%>
+        <td>
+        ${data.data().playerCountry}
+        </td>        
+        </tr>
+        </table>
+        </div>
+        </br>
+        ` 
+        document.querySelector("#pre-rank").innerHTML += `
+        <div align=center>
+<table>
+        <tr>
+        <td width=15%>
+        ${data.data().prevRank}
+        </td>        
+        </tr>
+        </table>
+        </div>
+        </br>
+        ` 
+        document.querySelector("#rank").innerHTML += `
+        <div align=center>
+<table>
+        <tr>
+        <td width=15%>
+        ${data.data().currentRank}
+        </td>        
+        </tr>
+        </table>
+        </div>
+        </br>
+        ` 
+        document.querySelector("#point").innerHTML += `
+        <div align=center>
+<table>
+        <tr>
+        <td width=20%>
+        ${data.data().playerPoints}
+        </td>        
+        </tr>
+        </table>
+        </div>
+        </br>
+        ` 
   });
   });
 

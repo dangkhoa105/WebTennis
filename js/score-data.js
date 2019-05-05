@@ -50,84 +50,87 @@ function updateKey()
     $("#url_key").val(key);
 }
 function retrievingData() {
- 
+  
   const list_div = document.querySelector("#list-score");
   let inputDatetime =""+ $('#datetime').val();
-  var docRef = db.collection("Schedule").where("Date", "==","2018-12-31")
-  docRef.get().then(function (querySnapshot) {
-    querySnapshot.forEach(function(data){
-      let imgW = data.data().Winner;
-      let imgL = data.data().Loser;
-      imgW = imgW.replace(" ","%20");
-      imgL = imgL.replace(" ","%20");
-      list_div.innerHTML += 
-   `
-      <style>
-        .container_score {
-          width: 75%;
-          text-align: center;
-          padding-left: 25%;         
-        }
-
-        .wrap_score {
-          background: white;
-        }
-        
-        .score {
-          width: 100%;
-          text-align: center;
-        }
-        
-        .score td {
-          border: 1px solid gray;
-        }
-        
-        .score .time_begin {
-          border-left: 0;
-        }
-        
-        .score .score_finish {
-          border-right: 0;
-        }
-        
-        .flag img {
-          width: 30px;
-          height: 20px;
-        }      
-     
-        .country {
-          text-align: left;
-        }      
-      </style>
-
-      <div class="container_score">     
-        <div class="wrap_score">
-          <table class="score">
-            <tr style="background:#02031c; color: white;">
-              <td style="background:#02031c; text-align: left; color: white; padding-left:40px;" colspan="5" ${set_size}><i class="fas fa-map-marker-alt"></i> Stadium: ${data.data().Location}</td>
-              <td style="background:white;" rowspan="3" ><button id = "delete${data.data().ID}" onclick = "deleteData(${data.data().ID})" style="display: none;">- </button></td>
-            </tr>
-            <tr>
-              <td width = "15%" class="flag"><img src="img/flag/${data.data().Winner}.png"></td>
-              <td width = "35%" class="country"><i class="fas fa-racquet"></i> ${data.data().Winner}</td>
-              <td width = "17%">${data.data().W1}</td>
-              <td width = "17%">${data.data().W2}</td>
-              <td width = "17%">${data.data().W3 != "undefined" ? + data.data().W3 : ""}</td>
-              
-            </tr>
-            <tr>
-              <td width = "15%" class="flag"><img src="img/flag/${data.data().Loser}.png"></td>
-              <td width = "30%" class="country"><i class="fas fa-racquet"></i> ${data.data().Loser}</td>
-              <td width = "17%">${data.data().L1}</td>
-              <td width = "17%">${data.data().L2}</td>
-              <td width = "17%">${data.data().W3 != "undefined" ? + data.data().L3 : ""}</td>
-            </tr>
-          </table>             
-          </div>
-        </div>`   
-    })
-    
-  });
+  if(checkScoreDay != inputDatetime){
+    $('#list-score').empty();
+    var docRef = db.collection("Schedule").where("Date", "==",""+ inputDatetime)
+    docRef.get().then(function (querySnapshot) {
+      querySnapshot.forEach(function(data){
+        let imgW = data.data().Winner;
+        let imgL = data.data().Loser;
+        imgW = imgW.replace(" ","%20");
+        imgL = imgL.replace(" ","%20");
+        list_div.innerHTML += 
+     `
+        <style>
+          .container_score {
+            width: 75%;
+            text-align: center;
+            padding-left: 25%;         
+          }
+  
+          .wrap_score {
+            background: white;
+          }
+          
+          .score {
+            width: 100%;
+            text-align: center;
+          }
+          
+          .score td {
+            border: 1px solid gray;
+          }
+          
+          .score .time_begin {
+            border-left: 0;
+          }
+          
+          .score .score_finish {
+            border-right: 0;
+          }
+          
+          .flag img {
+            width: 30px;
+            height: 20px;
+          }      
+       
+          .country {
+            text-align: left;
+          }      
+        </style>
+  
+        <div class="container_score">     
+          <div class="wrap_score">
+            <table class="score">
+              <tr style="background:#02031c; color: white;">
+                <td style="background:#02031c; text-align: left; color: white; padding-left:40px;" colspan="5" ${set_size}><i class="fas fa-map-marker-alt"></i> Stadium: ${data.data().Location}</td>
+                <td style="background:white;" rowspan="3" ><button id = "delete${data.data().ID}" onclick = "deleteData(${data.data().ID})" style="display: none;">- </button></td>
+              </tr>
+              <tr>
+                <td width = "15%" class="flag"><img src="img/flag/${data.data().Winner}.png"></td>
+                <td width = "35%" class="country"><i class="fas fa-racquet"></i> ${data.data().Winner}</td>
+                <td width = "17%">${data.data().W1}</td>
+                <td width = "17%">${data.data().W2}</td>
+                <td width = "17%">${data.data().W3 != "undefined" ? + data.data().W3 : ""}</td>
+                
+              </tr>
+              <tr>
+                <td width = "15%" class="flag"><img src="img/flag/${data.data().Loser}.png"></td>
+                <td width = "30%" class="country"><i class="fas fa-racquet"></i> ${data.data().Loser}</td>
+                <td width = "17%">${data.data().L1}</td>
+                <td width = "17%">${data.data().L2}</td>
+                <td width = "17%">${data.data().W3 != "undefined" ? + data.data().L3 : ""}</td>
+              </tr>
+            </table>             
+            </div>
+          </div>`   
+      })
+    });
+    checkScoreDay = inputDatetime;
+  }
 }
 function deleteData(id){
 

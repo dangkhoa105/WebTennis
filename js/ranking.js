@@ -63,11 +63,13 @@ function rRankingATP(){
             
                             querySnapshot.forEach(function (data) {
                                 var temp = `
-                                ${data.data().playerCountry}
-                                ${data.data().playerName}
-                                ${data.data().currentRank}
-                                ${data.data().prevRank}
-                                ${data.data().playerPoints}
+                                <div align = center>
+                                  <td width = "15%">${data.data().playerCountry}</td>
+                                  <td width = "35%">${data.data().playerName}</td>
+                                  <td width = "17%">${data.data().currentRank}</td>
+                                  <td width = "17%">${data.data().prevRank}</td>
+                                  <td width = "17%">${data.data().playerPoints}</td> 
+                                </div>         
                                 `;
             
                                 result.push(temp);
@@ -115,72 +117,69 @@ function rRankingATP(){
 
 function rRankingWTA(){
 
-  var docRef = db.collection("Ranking-WTA").orderBy("currentRank", "asc")
-  docRef.get().then(function (querySnapshot) {
-  querySnapshot.forEach(function(data){
-      
-     document.querySelector("#name").innerHTML += `  
-        <div align=center>
-<table>
-        <tr>
-        <td width=30%>
-        ${data.data().playerName}
-        </td>        
-        </tr>
-        </table>
-        </div>
-        </br>
-        ` 
-        document.querySelector("#country").innerHTML += `
-        <div align=center>
-<table>
-        <tr width=30%>
-        <td>
-        ${data.data().playerCountry}
-        </td>        
-        </tr>
-        </table>
-        </div>
-        </br>
-        ` 
-        document.querySelector("#pre-rank").innerHTML += `
-        <div align=center>
-<table>
-        <tr>
-        <td width=15%>
-        ${data.data().prevRank}
-        </td>        
-        </tr>
-        </table>
-        </div>
-        </br>
-        ` 
-        document.querySelector("#rank").innerHTML += `
-        <div align=center>
-<table>
-        <tr>
-        <td width=15%>
-        ${data.data().currentRank}
-        </td>        
-        </tr>
-        </table>
-        </div>
-        </br>
-        ` 
-        document.querySelector("#point").innerHTML += `
-        <div align=center>
-<table>
-        <tr>
-        <td width=20%>
-        ${data.data().playerPoints}
-        </td>        
-        </tr>
-        </table>
-        </div>
-        </br>
-        ` 
-  });
-  });
+  $(function () {
+    
+    (async function (name) {
 
+        
+        var container = $('#pagination-' + name);        
+        var sources = async function () {
+            
+            result = []
+
+            var docRef = db.collection("Ranking-WTA").orderBy("currentRank", "asc")
+
+            await docRef.get().then(function (querySnapshot) {
+
+                querySnapshot.forEach(function (data) {
+                    var temp = `
+                    <div align = center>
+                      <td width = "15%">${data.data().playerCountry}</td>
+                      <td width = "35%">${data.data().playerName}</td>
+                      <td width = "17%">${data.data().currentRank}</td>
+                      <td width = "17%">${data.data().prevRank}</td>
+                      <td width = "17%">${data.data().playerPoints}</td> 
+                    </div>         
+                    `;
+
+                    result.push(temp);
+                });
+            });
+          
+            
+            return result;
+        }();
+
+        var options = {
+            dataSource: await sources,
+            callback: function (response, pagination) {
+                window.console && console.log(response, pagination);
+
+                var dataHtml = '<ul>';
+
+                $.each(response, function (index, item) {
+                    dataHtml += '<li>' + item + '</li>';
+                });
+
+                dataHtml += '</ul>';
+
+                container.prev().html(dataHtml);
+            }
+        };
+
+        //$.pagination(container, options);
+
+        container.addHook('beforeInit', function () {
+            window.console && console.log('beforeInit...');
+        });
+        container.pagination(options);
+
+        container.addHook('beforePageOnClick', function () {
+            window.console && console.log('beforePageOnClick...');
+            //return false
+        });
+    })('demo1');
+
+})
 
 }

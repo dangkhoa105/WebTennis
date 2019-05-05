@@ -468,22 +468,31 @@ textarea:focus {
             display: block; } }
       .header-area .newspaper-main-menu .classy-navbar .classynav ul li a {
         font-weight: 500; }
-        .header-area .newspaper-main-menu .classy-navbar .classynav ul li a:hover, .header-area .newspaper-main-menu .classy-navbar .classynav ul li a:focus {
+        .header-area .newspaper-main-menu .classy-navbar .classynav ul li a:hover, .header-area .newspaper-main-menu .classy-navbar .classynav ul li a:focus .classynav ul a:hover .classynav ul a:focus{
           font-weight: 500;
           color: #ee002d; }
-      .header-area .newspaper-main-menu .classy-navbar .classynav > ul > li > a {
+      .header-area .newspaper-main-menu .classy-navbar .classynav > ul > li > a{
         text-transform: capitalize;
         padding: 12px 12px 11px;
         background-color: transparent;
         line-height: 1;
         color: #828282;
         font-weight: 500; }
+        .classynav > ul > a {
+          text-transform: capitalize;
+          padding: 12px 12px 11px;
+          background-color: transparent;
+          line-height: 1;
+          color: #828282;
+          font-weight: 500;
+        }
         .header-area .newspaper-main-menu .classy-navbar .classynav > ul > li > a:hover, .header-area .newspaper-main-menu .classy-navbar .classynav > ul > li > a:focus {
           color: #1c1c1c; }
+        .classynav > ul > a:hover, .classynav > ul > a:focus {color: #1c1c1c;}
       .header-area .newspaper-main-menu .classy-navbar .classynav > ul > li.active > a {
         position: relative;
         z-index: 1;
-        color: #1c1c1c; }
+        color: #ee002d; }
         .header-area .newspaper-main-menu .classy-navbar .classynav > ul > li.active > a::before {
           background-color: #f7f7f7;
           width: 100%;

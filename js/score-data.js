@@ -61,7 +61,6 @@ function retrievingData() {
       imgW = imgW.replace(" ","%20");
       imgL = imgL.replace(" ","%20");
       list_div.innerHTML += 
-<<<<<<< HEAD
    `
       <style>
         .container_score {
@@ -94,9 +93,7 @@ function retrievingData() {
         .flag img {
           width: 30px;
           height: 20px;
-        }
-=======
-      `
+        }      
       
       <table width  = 500 style = 'background-color: #008B8B'; >
       <tr>
@@ -120,7 +117,6 @@ function retrievingData() {
         ${data.data().W3 != "undefined" ? 'W3</br>' + data.data().W3 + '</br>'+ data.data().L3 : ""}</td>
         <td width = "5%" ${set_size}style = 'background-ground: #FFFFFF'; ><button id = "delete${data.data().ID}" onclick = "deleteData(${data.data().ID})" style="display: none;">Delete</button></td>
         </br>
->>>>>>> 9e0c102f1b1b829aab758de4f9fa0fc93bad1e12
         
         .country {
           text-align: left;

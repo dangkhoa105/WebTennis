@@ -7,7 +7,7 @@ img{height:auto;max-width:100%}
 .bg-img{background-position:center center;background-size:cover;background-repeat:no-repeat}
 .bg-transparent{background-color:transparent!important}
 .classy-nav-container{position:relative;z-index:100;background-color:#fff}
-.classy-btn,.classy-nav-container.box-skins .classynav>ul>li{background-color:#1abc9c}
+.classy-btn,.classy-nav-container.box-skins .classynav>ul>li>a{background-color:#1abc9c}
 .classy-nav-container *{box-sizing:border-box}
 .classy-nav-container a{transition-duration:.5s;color:#232323;display:inline-block}
 .classy-nav-container a:focus,.classy-nav-container a:hover{transition-duration:.5s;color:#1abc9c}
@@ -18,9 +18,9 @@ img{height:auto;max-width:100%}
 .breakpoint-off .classynav,.classy-navbar{-webkit-box-align:center;-ms-grid-row-align:center}
 .classy-navbar{width:100%;height:70px;padding:.5em 2em;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}
 .classy-navbar .nav-brand{color:#565656;display:inline-block;margin-right:30px}
-.classynav ul li{display:inline-block;clear:both;position:inherit;z-index:10}
-.classynav ul li.cn-dropdown-item,.classynav ul li.cn-dropdown-item ul li{position:relative;z-index:10}
-.classynav ul li ul li{display:block}
+.classynav ul li {display:inline-block;clear:both;position:inherit;z-index:10}
+.classynav ul li.cn-dropdown-item,.classynav ul li.cn-dropdown-item ul li a{position:relative;z-index:10}
+.classynav ul li ul li a{display:block}
 .classynav ul li ul li a{padding:0 20px}
 .classynav ul li a{padding:0 12px;display:block;height:35px;font-size:14px;line-height:34px}
 .classynav ul li .megamenu li a{padding:0 12px}
@@ -44,35 +44,35 @@ img{height:auto;max-width:100%}
 .classy-navbar-toggler .navbarToggler.active span:nth-of-type(1){-webkit-transform:rotate3d(0,0,1,45deg);transform:rotate3d(0,0,1,45deg);top:8px}
 .classy-navbar-toggler .navbarToggler.active span:nth-of-type(2){opacity:0}
 .classy-navbar-toggler .navbarToggler.active span:nth-of-type(3){-webkit-transform:rotate3d(0,0,1,-45deg);transform:rotate3d(0,0,1,-45deg);top:-8px}
-.classynav ul li .megamenu{position:absolute;width:100%;left:0;top:100%;background-color:#fff;z-index:200;box-shadow:0 1px 4px rgba(0,0,0,.15)}
-.classynav ul li .megamenu .single-mega.cn-col-5{width:20%;float:left;padding:15px;border-right:1px solid #f2f4f8}
-.classynav ul li .megamenu .single-mega.cn-col-5:last-of-type{border-right:none}
-.classynav ul li .megamenu .single-mega.cn-col-4{width:25%;float:left;padding:15px;border-right:1px solid #f2f4f8}
-.classynav ul li .megamenu .single-mega.cn-col-4:last-of-type{border-right:none}
-.classynav ul li .megamenu .single-mega.cn-col-3{width:33.3333334%;float:left;padding:15px;border-right:1px solid #f2f4f8}
-.classynav ul li .megamenu .single-mega.cn-col-3:last-of-type{border-right:none}
-.classynav ul li .megamenu .single-mega .title{font-size:14px;border-bottom:1px solid #f2f4f8;padding:8px 12px}
-.classynav ul li .dropdown li a{border-bottom:1px solid rgba(242,244,248,.7)}
-.classynav ul li .dropdown li:last-child a{border-bottom:none}
-.classynav ul li .dropdown li .dropdown li a{border-bottom:1px solid rgba(242,244,248,.7)}
-.classynav ul li .dropdown li .dropdown li:last-child a{border-bottom:none}
-.classynav ul li .dropdown li .dropdown li .dropdown li a{border-bottom:1px solid rgba(242,244,248,.7)}
-.classynav ul li .dropdown li .dropdown li .dropdown li:last-child a{border-bottom:none}
-.classynav ul li .dropdown li .dropdown li .dropdown li .dropdown li a{border-bottom:1px solid rgba(242,244,248,.7)}
-.classynav ul li .dropdown li .dropdown li .dropdown li .dropdown li:last-child a{border-bottom:none}
-.classynav ul li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li a{border-bottom:1px solid rgba(242,244,248,.7)}.classynav ul li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li:last-child a{border-bottom:none}.classynav ul li 
+.classynav ul li a .megamenu{position:absolute;width:100%;left:0;top:100%;background-color:#fff;z-index:200;box-shadow:0 1px 4px rgba(0,0,0,.15)}
+.classynav ul li a .megamenu .single-mega.cn-col-5{width:20%;float:left;padding:15px;border-right:1px solid #f2f4f8}
+.classynav ul li a .megamenu .single-mega.cn-col-5:last-of-type{border-right:none}
+.classynav ul li a .megamenu .single-mega.cn-col-4{width:25%;float:left;padding:15px;border-right:1px solid #f2f4f8}
+.classynav ul li a .megamenu .single-mega.cn-col-4:last-of-type{border-right:none}
+.classynav ul li a .megamenu .single-mega.cn-col-3{width:33.3333334%;float:left;padding:15px;border-right:1px solid #f2f4f8}
+.classynav ul li a .megamenu .single-mega.cn-col-3:last-of-type{border-right:none}
+.classynav ul li a .megamenu .single-mega .title{font-size:14px;border-bottom:1px solid #f2f4f8;padding:8px 12px}
+.classynav ul li a .dropdown li a{border-bottom:1px solid rgba(242,244,248,.7)}
+.classynav ul li a .dropdown li:last-child a{border-bottom:none}
+.classynav ul li a .dropdown li .dropdown li a{border-bottom:1px solid rgba(242,244,248,.7)}
+.classynav ul li a .dropdown li .dropdown li:last-child a{border-bottom:none}
+.classynav ul li a .dropdown li .dropdown li .dropdown li a{border-bottom:1px solid rgba(242,244,248,.7)}
+.classynav ul li a .dropdown li .dropdown li .dropdown li:last-child a{border-bottom:none}
+.classynav ul li a .dropdown li .dropdown li .dropdown li .dropdown li a{border-bottom:1px solid rgba(242,244,248,.7)}
+.classynav ul li a a.dropdown li .dropdown li .dropdown li .dropdown li:last-child a{border-bottom:none}
+.classynav ul li a .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li a{border-bottom:1px solid rgba(242,244,248,.7)}.classynav ul li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li:last-child a{border-bottom:none}.classynav ul li 
 .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li a{border-bottom:1px solid rgba(242,244,248,.7)}
-.classynav ul li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li:last-child a{border-bottom:none}
-.classynav ul li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li a{border-bottom:1px solid rgba(242,244,248,.7)}
-.classynav ul li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li:last-child a{border-bottom:none}
-.classynav ul li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li a{border-bottom:1px solid rgba(242,244,248,.7)}
-.classynav ul li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li:last-child a{border-bottom:none}
+.classynav ul li a .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li:last-child a{border-bottom:none}
+.classynav ul li a .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li a{border-bottom:1px solid rgba(242,244,248,.7)}
+.classynav ul li a .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li:last-child a{border-bottom:none}
+.classynav ul li a .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li a{border-bottom:1px solid rgba(242,244,248,.7)}
+.classynav ul li a .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li:last-child a{border-bottom:none}
 .breakpoint-off .classynav{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}
-.breakpoint-off .classynav ul li .dropdown{width:180px;position:absolute;background-color:#fff;top:120%;left:0;z-index:100;height:auto;box-shadow:0 1px 5px rgba(0,0,0,.1);-webkit-transition-duration:.3s;transition-duration:.3s;opacity:0;visibility:hidden;padding:10px 0}
-.breakpoint-off .classynav ul li .dropdown li .dropdown{top:10px;left:180px;z-index:200;opacity:0;visibility:hidden}
-.breakpoint-off .classynav ul li .dropdown li .dropdown li .dropdown,.breakpoint-off .classynav ul li .dropdown li .dropdown li .dropdown li .dropdown,.breakpoint-off .classynav ul li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown,.breakpoint-off .classynav ul li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown,.breakpoint-off .classynav ul li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown,.breakpoint-off .classynav ul li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown,.breakpoint-off .classynav ul li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown,.breakpoint-off .classynav ul li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown{opacity:0;visibility:hidden;top:120%}.breakpoint-off .classynav ul li:hover .dropdown{opacity:1;visibility:visible;top:100%}
-.breakpoint-off .classynav ul li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li:hover .dropdown,.breakpoint-off .classynav ul li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li:hover .dropdown,.breakpoint-off .classynav ul li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li:hover .dropdown,.breakpoint-off .classynav ul li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li:hover .dropdown,.breakpoint-off .classynav ul li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li:hover .dropdown,.breakpoint-off .classynav ul li .dropdown li .dropdown li .dropdown li .dropdown li:hover .dropdown,.breakpoint-off .classynav ul li .dropdown li .dropdown li .dropdown li:hover .dropdown,.breakpoint-off .classynav ul li .dropdown li .dropdown li:hover .dropdown,.breakpoint-off .classynav ul li .dropdown li:hover .dropdown{opacity:1;visibility:visible;top:-10px}.breakpoint-off .classynav ul li .megamenu{opacity:0;visibility:hidden;position:absolute;width:100%;left:0;top:120%;background-color:#fff;z-index:200;box-shadow:0 1px 4px rgba(0,0,0,.15);-webkit-transition-duration:.3s;transition-duration:.3s}
-.breakpoint-off .classynav ul li.megamenu-item:focus .megamenu,.breakpoint-off .classynav ul li.megamenu-item:hover .megamenu{top:100%;visibility:visible;opacity:1}.breakpoint-on .classy-navbar-toggler,.breakpoint-on .classycloseIcon{display:block}
+.breakpoint-off .classynav ul li a .dropdown{width:180px;position:absolute;background-color:#fff;top:120%;left:0;z-index:100;height:auto;box-shadow:0 1px 5px rgba(0,0,0,.1);-webkit-transition-duration:.3s;transition-duration:.3s;opacity:0;visibility:hidden;padding:10px 0}
+.breakpoint-off .classynav ul li a .dropdown li .dropdown{top:10px;left:180px;z-index:200;opacity:0;visibility:hidden}
+.breakpoint-off .classynav ul li a .dropdown li .dropdown li .dropdown,.breakpoint-off .classynav ul li .dropdown li .dropdown li .dropdown li .dropdown,.breakpoint-off .classynav ul li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown,.breakpoint-off .classynav ul li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown,.breakpoint-off .classynav ul li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown,.breakpoint-off .classynav ul li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown,.breakpoint-off .classynav ul li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown,.breakpoint-off .classynav ul li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown{opacity:0;visibility:hidden;top:120%}.breakpoint-off .classynav ul li:hover .dropdown{opacity:1;visibility:visible;top:100%}
+.breakpoint-off .classynav ul li a .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li:hover .dropdown,.breakpoint-off .classynav ul li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li:hover .dropdown,.breakpoint-off .classynav ul li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li:hover .dropdown,.breakpoint-off .classynav ul li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li:hover .dropdown,.breakpoint-off .classynav ul li .dropdown li .dropdown li .dropdown li .dropdown li .dropdown li:hover .dropdown,.breakpoint-off .classynav ul li .dropdown li .dropdown li .dropdown li .dropdown li:hover .dropdown,.breakpoint-off .classynav ul li .dropdown li .dropdown li .dropdown li:hover .dropdown,.breakpoint-off .classynav ul li .dropdown li .dropdown li:hover .dropdown,.breakpoint-off .classynav ul li .dropdown li:hover .dropdown{opacity:1;visibility:visible;top:-10px}.breakpoint-off .classynav ul li .megamenu{opacity:0;visibility:hidden;position:absolute;width:100%;left:0;top:120%;background-color:#fff;z-index:200;box-shadow:0 1px 4px rgba(0,0,0,.15);-webkit-transition-duration:.3s;transition-duration:.3s}
+.breakpoint-off .classynav ul a li.megamenu-item:focus .megamenu,.breakpoint-off .classynav ul li.megamenu-item:hover .megamenu{top:100%;visibility:visible;opacity:1}.breakpoint-on .classy-navbar-toggler,.breakpoint-on .classycloseIcon{display:block}
 .breakpoint-on .classy-navbar .classy-menu{background-color:#fff;position:fixed;top:0;left:-310px;z-index:1000;width:300px;height:100%;-webkit-transition-duration:.5s;transition-duration:.5s;padding:0;box-shadow:0 5px 20px rgba(0,0,0,.1);display:block;overflow-x:hidden;overflow-y:scroll}
 .breakpoint-on .classynav ul li .dropdown,.breakpoint-on .classynav ul li .megamenu{position:relative;left:0;box-shadow:none;width:100%;top:0}
 .breakpoint-on .classy-navbar .classy-menu.menu-on{left:0}.breakpoint-on .classynav ul li{display:block;position:relative;clear:both;z-index:10}

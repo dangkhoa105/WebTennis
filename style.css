@@ -1461,3 +1461,21 @@ body {font-family: Verdana, sans-serif;}
   color:#EE002D;
 }
 >>>>>>> 9e0c102f1b1b829aab758de4f9fa0fc93bad1e12
+
+/*them bang cho phan ranking*/
+ 
+ table {
+  font-family: arial, sans-serif;
+  width:80%;
+border-collapse: collapse;
+}
+
+ td,th {
+  border-bottom:1px solid #ddd;
+   padding: 8px 0 8px 8px;
+  text-align: center;
+}
+
+td{
+  text-transform: uppercase;
+}

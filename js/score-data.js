@@ -94,30 +94,7 @@ function retrievingData() {
           width: 30px;
           height: 20px;
         }      
-      
-      <table width  = 500 style = 'background-color: #008B8B'; >
-      <tr>
-        <td width = "15%" ${set_size}>${data.data().Location}</br>
-        <img  width = 20 heigh = 30 src = 'https://raw.githubusercontent.com/NguyenTanPhucK11/dataOfTennis/master/flags/${imgW}.png';/></br>
-        <img  width = 20 heigh = 30 src = 'https://raw.githubusercontent.com/NguyenTanPhucK11/dataOfTennis/master/flags/${imgL}.png';/></td>
-
-        <td width = "30%" ${set_size} width = "30%"> Player</br>
-        ${data.data().Winner}</br> 
-        ${data.data().Loser}</td>
-
-        <td width = "15%" ${set_size}> W1</br>
-        ${data.data().W1}</br>
-        ${data.data().L1}</td>
-
-        <td width = "15%" ${set_size}> W2</br>
-        ${data.data().W2}</br>
-        ${data.data().L2}</td>
-
-        <td width = "15%" ${set_size}> 
-        ${data.data().W3 != "undefined" ? 'W3</br>' + data.data().W3 + '</br>'+ data.data().L3 : ""}</td>
-        <td width = "5%" ${set_size}style = 'background-ground: #FFFFFF'; ><button id = "delete${data.data().ID}" onclick = "deleteData(${data.data().ID})" style="display: none;">Delete</button></td>
-        </br>
-        
+     
         .country {
           text-align: left;
         }      
